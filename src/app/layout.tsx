@@ -4,6 +4,7 @@ import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs'
 import { dark } from '@clerk/themes';
 import Header from "../components/ui/Header";
+import Script from "next/script"; // Import the Script component
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,8 @@ export default function RootLayout({
         <body className={`${inter.className} bg-background text-foreground`}>
           <Header />
           <main>{children}</main>
+          {/* Add the Puter.js script here */}
+          <Script src="https://js.puter.com/v2/" strategy="afterInteractive" />
         </body>
       </html>
     </ClerkProvider>
